@@ -76,9 +76,7 @@ app.post("/search", async (req, res) => {
     const result = await response.json();
     // console.log(result);
     for (let produc of result.data.products) {
-      let dis = (parseFloat(produc.product_original_price) - parseFloat(produc.product_price)) / produc.product_original_price * 100;
-      let discount = '${dis}';
-
+     
       let data = {
         price: Number(produc.product_price.slice(1)),
         img: produc.product_photo,
